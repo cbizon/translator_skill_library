@@ -1,0 +1,4 @@
+interface:
+  display_name: "Translator Issue Triage"
+  short_description: "Triage Feedback issues using live Translator evidence"
+  default_prompt: "Use $translator-issue-triage to investigate Feedback issue 1356, post concise findings, and assign it if component ownership is clear."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Translator Set Input Queries"
+  short_description: "Run Answer Coalesce set-input TRAPI queries"
+  default_prompt: "Use $translator-set-input-queries to build and run an Answer Coalesce set-input TRAPI query."

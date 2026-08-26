@@ -1,0 +1,7 @@
+interface:
+  display_name: "Translator One-Hop Questions"
+  short_description: "Run one-hop TRAPI questions via ARS."
+  default_prompt: "Use $translator-one-hop-questions to resolve the input entity, build a one-hop TRAPI query, submit it to ARS, and summarize the results."
+
+policy:
+  allow_implicit_invocation: true
