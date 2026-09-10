@@ -1,0 +1,7 @@
+interface:
+  display_name: "Translator Normalization Triage"
+  short_description: "Trace odd identifier cliques and semantic drift"
+  default_prompt: "Use $translator-normalization-triage to investigate this suspicious identifier grouping, name, type, or answer node and identify the first faulty layer."
+
+policy:
+  allow_implicit_invocation: true

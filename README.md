@@ -7,6 +7,7 @@ Reusable agent skills for working with the Biomedical Data Translator.
 | Skill | Purpose |
 | --- | --- |
 | `translator-issue-triage` | Investigate `NCATSTranslator/Feedback` issues using live GitHub, ARS, TRAPI, and ARA evidence. |
+| `translator-normalization-triage` | Trace odd identifier groupings, names, and semantic drift through Babel, NodeNorm, Translator answers, and UI presentation. |
 | `translator-one-hop-questions` | Build, validate, run, and inspect one-hop TRAPI queries through Translator ARS. |
 | `translator-set-input-queries` | Build, validate, run, and inspect set-input TRAPI queries against Answer Coalesce. |
 
@@ -40,7 +41,7 @@ cd "$HOME/src/translator_skill_library"
 
 ## Install In Codex
 
-Codex discovers personal skills under `$HOME/.agents/skills`. Link all three
+Codex discovers personal skills under `$HOME/.agents/skills`. Link all four
 skills into that directory:
 
 ```bash
@@ -48,6 +49,7 @@ mkdir -p "$HOME/.agents/skills"
 
 for skill in \
   translator-issue-triage \
+  translator-normalization-triage \
   translator-one-hop-questions \
   translator-set-input-queries
 do
@@ -72,13 +74,14 @@ See the official
 ## Install In Claude Code
 
 Claude Code discovers personal skills under `$HOME/.claude/skills`. Link all
-three skills into that directory:
+four skills into that directory:
 
 ```bash
 mkdir -p "$HOME/.claude/skills"
 
 for skill in \
   translator-issue-triage \
+  translator-normalization-triage \
   translator-one-hop-questions \
   translator-set-input-queries
 do
@@ -108,6 +111,7 @@ do
   mkdir -p "$target"
   for skill in \
     translator-issue-triage \
+    translator-normalization-triage \
     translator-one-hop-questions \
     translator-set-input-queries
   do
@@ -133,6 +137,9 @@ git pull --ff-only
 
 - The query skills make live network requests and write result JSON to paths
   selected in their commands.
+- `translator-normalization-triage` is read-only by default. It uses live
+  NodeNorm, Name Resolver, ARS/TRAPI, source-record, and Babel concordance
+  evidence as available.
 - `translator-issue-triage` can post a GitHub comment and add justified
   assignees when invoked for normal triage. Ask for a `dry-run`, `draft`, or
   `read-only` investigation to prevent GitHub mutations.
